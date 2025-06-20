@@ -161,7 +161,7 @@ echo -e "\\ndefine Device/bdy_g18-pro
   SUPPORTED_DEVICES += bdy,g18-pro
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig kmod-swconfig kmod-mt7615-firmware
 endef
-TARGET_DEVICES += bdkj" >> target/linux/rockchip/image/rk35xx.mk
+TARGET_DEVICES += bdy_g18-pro" >> target/linux/rockchip/image/rk35xx.mk
 
 
 
