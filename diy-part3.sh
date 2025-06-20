@@ -62,15 +62,15 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 
 
 # 轮询检查ubus服务是否崩溃，崩溃就重启ubus服务，只针对rk3566机型，如黑豹X2和荐片TV盒子。
-cp -f $GITHUB_WORKSPACE/configfiles/httpubus package/base-files/files/etc/init.d/httpubus
-cp -f $GITHUB_WORKSPACE/configfiles/ubus-examine.sh package/base-files/files/bin/ubus-examine.sh
-chmod 755 package/base-files/files/etc/init.d/httpubus
-chmod 755 package/base-files/files/bin/ubus-examine.sh
+# cp -f $GITHUB_WORKSPACE/configfiles/httpubus package/base-files/files/etc/init.d/httpubus
+# cp -f $GITHUB_WORKSPACE/configfiles/ubus-examine.sh package/base-files/files/bin/ubus-examine.sh
+# chmod 755 package/base-files/files/etc/init.d/httpubus
+# chmod 755 package/base-files/files/bin/ubus-examine.sh
 
 
 
 # 集成黑豹X2和荐片TV盒子WiFi驱动，默认不启用WiFi
-cp -a $GITHUB_WORKSPACE/configfiles/firmware/* package/firmware/
+# cp -a $GITHUB_WORKSPACE/configfiles/firmware/* package/firmware/
 # cp -f $GITHUB_WORKSPACE/configfiles/opwifi package/base-files/files/etc/init.d/opwifi
 # chmod 755 package/base-files/files/etc/init.d/opwifi
 # sed -i "s/wireless.radio\${devidx}.disabled=1/wireless.radio\${devidx}.disabled=0/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
@@ -91,8 +91,8 @@ sed -i "s/192.168.1.1/192.168.200.1/g" package/base-files/files/bin/config_gener
 
 
 # 加入nsy_g68-plus初始化网络配置脚本
-cp -f $GITHUB_WORKSPACE/configfiles/swconfig_install package/base-files/files/etc/init.d/swconfig_install
-chmod 755 package/base-files/files/etc/init.d/swconfig_install
+# cp -f $GITHUB_WORKSPACE/configfiles/swconfig_install package/base-files/files/etc/init.d/swconfig_install
+# chmod 755 package/base-files/files/etc/init.d/swconfig_install
 
 
 
@@ -158,7 +158,7 @@ echo -e "\\ndefine Device/bdy_g18-pro
   SUPPORTED_DEVICES += bdy,g18-pro
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig kmod-swconfig
 endef
-TARGET_DEVICES += bdy_g18-pro" >> target/linux/rockchip/image/rk35xx.mk
+TARGET_DEVICES += bdkj" >> target/linux/rockchip/image/rk35xx.mk
 
 
 
@@ -168,4 +168,4 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3568-bdy-g18-pro.dts target/linux/rockchip
 
 
 # 定时限速插件
-git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+# git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
