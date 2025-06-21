@@ -160,11 +160,21 @@ echo -e "\\ndefine Device/bdy_g18-pro
 endef
 TARGET_DEVICES += bdy_g18-pro" >> target/linux/rockchip/image/rk35xx.mk
 
-
+# 增加bdkj_bd-one
+echo -e "\\ndefine Device/bdky_bd-one
+\$(call Device/rk3568)
+  DEVICE_VENDOR := BDKJ
+  DEVICE_MODEL := ONE
+  DEVICE_DTS := rk3568-bdkj-bd-one
+  SUPPORTED_DEVICES += bdkj,bd-one
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig kmod-swconfig kmod-mt7615-firmware
+endef
+TARGET_DEVICES += bdkj_bd-one" >> target/linux/rockchip/image/rk35xx.mk
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g16-plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g16-plus.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-bdy-g18-pro.dts target/linux/rockchip/dts/rk3568/rk3568-bdy-g18-pro.dts
+cp -f $GITHUB_WORKSPACE/configfiles/rk3568-bdkj-bd-one.dts target/linux/rockchip/dts/rk3568/rk3568-bdkj-bd-one.dts
 
 
 # 定时限速插件
